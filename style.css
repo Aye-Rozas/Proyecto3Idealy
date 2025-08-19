@@ -262,61 +262,17 @@ footer {
   gap: 1rem;
   grid-auto-flow: row dense;
 }
-
-.pinItem:nth-child(2) {
-  grid-column: span 2;
-}
-.pinItem:nth-child(4) {
+.pinItem:nth-child(even) {
   grid-row: span 2;
 }
-
-.pinItem:nth-child(6) {
-  grid-column: span 2;
-}
-
-.pinItem:nth-child(8) {
-  grid-row: span 2;
-}
-
-.pinItem:nth-child(10) {
-  grid-column: span 2;
-}
-
-.pinItem:nth-child(12) {
-  grid-row: span 2;
-}
-.pinItem:nth-child(14) {
-  grid-column: span 2;
-}
-.pinItem:nth-child(16) {
-  grid-row: span 2;
-}
-.pinItem:nth-child(18) {
-  grid-column: span 2;
-}
-.pinItem:nth-child(20) {
-  grid-row: span 2;
-}
-.pinItem-:nth-child(22) {
-  grid-column: span 2;
-}
-.pinItem:nth-child(24) {
-  grid-row: span 2;
-}
-.pinItem:nth-child(26) {
-  grid-column: span 2;
-}
-.pinItem:nth-child(28) {
-  grid-row: span 2;
-}
-.pinItem-:nth-child(30) {
+.pinItem:nth-child(odd) {
   grid-column: span 2;
 }
 
 @media screen and (min-width: 576px) {
   .galeria {
     grid-template-columns: repeat(1, fr);
-  }
+    }
 }
 @media (max-width:350px) {
   header{
@@ -394,7 +350,7 @@ footer {
   object-fit: contain;
   cursor: pointer;
 }
-  
+
 }
 
 @media (max-width: 600px) {
@@ -437,6 +393,10 @@ footer {
   }
   header>nav>input{
     width: auto;
+  }
+    .pinItem {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
   }
 }
 
