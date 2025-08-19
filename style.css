@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*body {
+   */
+
+:root {
+  /* FONTS */
+  --pr3-primary-font: 'Poppins', sans-serif;
+
+  /* BRANDING COLORS */
+  --pr3-color-1: white;
+  --pr3-color-2: rgb(173, 217, 243);
+  --pr3-color-3: rgb(122, 184, 232);
+  --pr3-color-4: rgb(72, 141, 194);
+  --pr3-color-5: rgb(42, 91, 160);
+  --pr3-color-6: rgb(29, 58, 123);
+  /* BACKGROUND-COLORS */
+  --pr3-primary-bg: var(--pr3-color-1);
+
+  /* TEXT-COLORS */
+  --pr3-primary-text: var(--pr3-color-6);
+  --pr3-secondary-text: var(--pr3-color-3);
+  --pr3-tertiary-text: var(--pr3-color-1);
+
+  /* BORDER-COLORS */
+  --pr3-primary-border: 1px solid var(--pr3-color-3);
+
+  /* BORDER RADIUS */
+  --pr3-br: 8px;
+
+  /* SPACINGS */
+  --pr3-margin-xs: 10px;
+  --pr3-margin-s: 20px;
+  --pr3-margin-m: 30px;
+  --pr3-margin-l: 40px;
+  --pr3-margin-xl: 50px;
+  --pr3-margin-section: 100px;
+
+  --pr3-padding-xs: 10px;
+  --pr3-padding-s: 20px;
+  --pr3-padding-m: 30px;
+  --pr3-padding-l: 40px;
+  --pr3-padding-xl: 50px;
+
+  --pr3-gap-xs: 10px;
+  --pr3-gap-s: 20px;
+  --pr3-gap-m: 30px;
+  --pr3-gap-l: 40px;
+  --pr3-gap-xl: 50px;
+}
+
+body {
+  background-color: var(--pr3-primary-bg);
+  color: var(--pr3-primary-text);
+  font-family: 'Poppins', sans-serif;
+}
+
+body.blue header {
+  background-color: var(--pr3-color-6);
+  color: var(--pr3-tertiary-text);
+}
+.blue {
+  background-color: var(--pr3-color-6);
+  color: var(--color-background);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* HEADER STYLES */
+header {
+  display: flex;
+  height: 10svh;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--pr3-padding-xs);
+  gap: var(--pr3-gap-xs);
+  background-color: var(--pr3-color-1);
+}
+header > nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+header > nav > h1 {
+  background-color: var(--pr3-color-5);
+  width: 100px;
+  height: 35px;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: var(--pr3-br);
+  color: var(--pr3-color-2);
+  cursor: pointer;
+}
+header > nav > ul {
+  display: flex;
+  padding: var(--pr3-padding-xs);
+}
+header > nav > ul > li {
+  padding: var(--pr3-padding-xs);
+  cursor: pointer;
+}
+header > nav > input {
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  flex-grow: 1;
+  background-color: var(--pr3-color-3);
+  border: none;
+}
+
+header > nav > button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header > nav > button > img {
+  height: 28px;
+  width: 28px;
+}
+
+header > nav > button:hover {
+  background-color: var(--secondary);
+}
+
+header .profileimg {
+  border-radius: var(--pr3-br);
+  height: 40px;
+  width: 40px;
+}
+
+footer {
+  height: 10svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pinItem {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.pinItem > div {
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+
+.pinItem:hover > div {
+  display: flex;
+  cursor: zoom-in;
+}
+
+.pinItem .buttonBlue {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pinItem .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttonBlue > button {
+  background-color: var(--pr3-color-6);
+  color: var(--pr3-tertiary-text);
+  border-radius: 1.5rem;
+  padding: 1rem 1.4rem;
+  font-size: 1rem;
+  border: none;
+}
+.user > img {
+  width: 3rem;
+  border-radius: 50%;
+  border: solid 3px var(--pr3-color-5);
+}
+
+.pinItem .links a {
+  background-color: var(--transparent);
+  padding: 0.5rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+}
+
+.pinItem .links img {
+  width: 24px;
+  height: 24px;
+}
+.links > div > a > img {
+  width: 24px;
+  height: 24px;
+}
+.pinItem .links div {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.links > div > a > img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.completLink {
+  width: 100px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: black;
+}
+.pinInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pinInfo > .user {
+  padding-top: var(--pr3-padding-s);
+}
+.galeria {
+  padding: 0 1rem;
+  display: grid;
+  grid-auto-rows: 200px;
+  gap: 1rem;
+  grid-auto-flow: row dense;
+}
+
+.pinItem:nth-child(2) {
+  grid-column: span 2;
+}
+.pinItem:nth-child(4) {
+  grid-row: span 2;
+}
+
+.pinItem:nth-child(6) {
+  grid-column: span 2;
+}
+
+.pinItem:nth-child(8) {
+  grid-row: span 2;
+}
+
+.pinItem:nth-child(10) {
+  grid-column: span 2;
+}
+
+.pinItem:nth-child(12) {
+  grid-row: span 2;
+}
+.pinItem:nth-child(14) {
+  grid-column: span 2;
+}
+.pinItem:nth-child(16) {
+  grid-row: span 2;
+}
+.pinItem:nth-child(18) {
+  grid-column: span 2;
+}
+.pinItem:nth-child(20) {
+  grid-row: span 2;
+}
+.pinItem-:nth-child(22) {
+  grid-column: span 2;
+}
+.pinItem:nth-child(24) {
+  grid-row: span 2;
+}
+.pinItem:nth-child(26) {
+  grid-column: span 2;
+}
+.pinItem:nth-child(28) {
+  grid-row: span 2;
+}
+.pinItem-:nth-child(30) {
+  grid-column: span 2;
+}
+
+@media screen and (min-width: 576px) {
+  .galeria {
+    grid-template-columns: repeat(1, fr);
+  }
+}
+@media (max-width:350px) {
+  header{
+    height: 16svh;
+  }
+  nav {
+    /*background-color: green;*/
+    flex-wrap: wrap; 
+    flex-direction: column;
+    align-items: center;
+  }
+  nav h1{
+    margin: 8px 0;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  #searchInput {
+    height: 1.2rem;
+    width: 100%;
+    min-width: 60px;
+    max-width: 100%;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 450px){
+/*nav{background-color: green;}*/
+  #blueMode,
+  .profileimg {
+    display: none;
+    position: absolute;
+    right: 0;
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  #blueMode {
+    top: 100%;
+    margin-top: 5px;
+  }
+  .profileimg {
+    top: calc(100% + 55px); 
+    margin-top: 5px;
+  }
+
+  #searchB:hover ~ #blueMode,
+  #searchB:hover ~ .profileimg {
+    display: block;
+  }
+#blueMode {
+  background: var(--pr3-color-1);
+  border-radius: 50%;
+  padding: 6px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#blueMode img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.profileimg {
+  background: var(--pr3-color-1);
+  border-radius: 50%;
+  padding: 6px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  cursor: pointer;
+}
+  
+}
+
+@media (max-width: 600px) {
+  header>nav{
+    flex-wrap:wrap;
+    position: relative;
+  }
+  header>nav>h1{
+    order: 0;
+    width: auto;
+    cursor: pointer;
+  }
+  header>nav>ul{
+    order: 1;
+    flex-direction: column;
+  }
+  header>nav>ul.menu{ 
+    display: none;
+    position: absolute;
+    top:100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    min-width: 100px;
+    background:var(--color-background)}
+  header>nav>h1:hover + ul.menu,
+  header > nav > ul.menu:hover{
+    display: block;
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+  }
+  header > nav > ul.menu li {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ddd;
+    /*background: #f8f8f8;*/
+    background-color:var(--pr3-color-6) ;
+    color: var(--pr3-color-1);
+  }
+  header>nav>input{
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .galeria {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .galeria {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
