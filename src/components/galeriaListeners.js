@@ -17,6 +17,7 @@ const galeriaListeners = () => {
       firstSearch = { keyword, results };
     }
     printItems(results);
+      input.value = '';
   });
 };
 
