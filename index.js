@@ -2,12 +2,11 @@
 import printHeader from "./src/components/header";
 import printFooter from "./src/components/footer";
 import printgaleriaTemplate ,{printItems} from "./src/components/main";
+import { firstSearch } from "./src/components/galeriaListeners";
 
 const verPBusqueda=()=>{
-  const keyword=localStorage.getItem("firstSearchKeyword");
-  const backupImg=localStorage.getItem("firstSearchResults");
-  if(!keyword||!backupImg) return;
-  printItems(JSON.parse(backupImg));
+  if(firstSearch && firstSearch.results.length>0){
+  printItems(firstSearch.results);}
 };
 document.addEventListener("DOMContentLoaded",()=>{
 printHeader(verPBusqueda);

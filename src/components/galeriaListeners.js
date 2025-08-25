@@ -1,6 +1,8 @@
 import { searchPhotos } from './searchPhotos.js';
 import { printItems } from './printItems.js';
 
+let firstSearch = null;
+
 const galeriaListeners = () => {
   const input = document.querySelector('#searchInput');
   const btn = document.querySelector('#searchB');
@@ -11,11 +13,11 @@ const galeriaListeners = () => {
     const imagesData = await searchPhotos(keyword);
     const results = imagesData.response.results || [];
     //voy a guardar la primera busqueda si no existe antes
-    if (!localStorage.getItem('firstSearchKeyword') && results.length > 0) {
-      localStorage.setItem('firstSearchKeyword',keyword);
-      localStorage.setItem('firstSearchResults', JSON.stringify(results));
+   if (!firstSearch && results.length > 0) {
+      firstSearch = { keyword, results };
     }
     printItems(results);
   });
 };
-export {galeriaListeners};
+
+export {galeriaListeners, firstSearch};

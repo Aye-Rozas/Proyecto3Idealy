@@ -1,17 +1,6 @@
-//primera funcion, voy a hacer el pin que contiene la img, con boton photo y boton like, agrego perfil de usuario,
-//segunda funcion img de la persona
 
-//crear estructura de un pin
-
-//crear galeria vacia
-
-//imprimir los resultados en la galeria 
-
-
-
-//mostrar la galeria en pantalla con los elementos segun corresponda si hubo busqueda o no
 import { galeriaPinTemplate } from './galeriaPinTemplate.js';
-import { galeriaListeners } from './galeriaListeners.js';
+import { galeriaListeners, firstSearch } from './galeriaListeners.js';
 import { printItems } from './printItems.js';
 import { searchPhotos } from './searchPhotos.js';
 
@@ -19,16 +8,16 @@ const printgaleriaTemplate = async () => {
   const main = document.querySelector('main');
   main.appendChild(galeriaPinTemplate());
   galeriaListeners();
-  const backupImg = localStorage.getItem('firstSearchResults');
-  if (backupImg) {
-    printItems(JSON.parse(backupImg));
+  setTimeout(async()=>{
+  if (firstSearch && firstSearch.results.length > 0) {
+    printItems(firstSearch.results);
   } else {
     const {response:{results=[]}={}}=
     await searchPhotos("corgi");
     printItems(results);
   }
+}, 0);
 };
-
 export default printgaleriaTemplate;
 export { printItems };
 //para guardar la primera busqueda lo divido en 3 partes.. el llamado al evento del header, que pide a la funcion 
